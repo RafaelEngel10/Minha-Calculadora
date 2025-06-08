@@ -16,8 +16,8 @@ int main() {
         cout << "=============Calculadora==============" << endl;
         cout << "1. Somar" << endl;
         cout << "2. Subtrair" << endl;
-        cout << "3. Multiplicar" << endl;
-        cout << "4. Dividir" << endl;
+        cout << "3. Multiplicar" << endl;                                         //Menu de escolha -> Usuário escolhe qual operação quer fazer entrando com digitos de 1 a 11
+        cout << "4. Dividir" << endl;                                             //Opção 12 faz com que a calculadora "desligue"
         cout << "5. Exponenciar" << endl;
         cout << "6. Radiciar (Tirar a raiz quadrada)" << endl;
         cout << "7. Fatorial" << endl;
@@ -34,7 +34,7 @@ int main() {
                 cout << "Quantos numeros você quer somar?";
                 cin >> Quantidade;
                 for (i=0;i<Quantidade;i++){
-                    cout << "Qual o " << i+1 << "o numero?";
+                    cout << "Qual o " << i+1 << "o numero?";                      //CÓDIGO DA SOMA
                     cin >> Numero1;
                     Acumulador = Acumulador + Numero1;
                 }
@@ -45,7 +45,7 @@ int main() {
                 cout << "Quantos numeros você quer subtrair?";
                 cin >> Quantidade;
                 for (i=0;i<Quantidade;i++){
-                    cout << "Qual o " << i+1 << "o numero?";
+                    cout << "Qual o " << i+1 << "o numero?";                      //CÓDIGO DA SUBTRAÇÃO
                     cin >> Numero1;
                     Acumulador = Numero1 - Acumulador;
                 }
@@ -57,7 +57,7 @@ int main() {
                 cout << "Quantos numeros você quer multiplicar?";
                 cin >> Quantidade;
                 for (i=0;i<Quantidade;i++){
-                    cout << "Qual o " << i+1 << "o numero?";
+                    cout << "Qual o " << i+1 << "o numero?";                       //CÓDIGO DA MULTIPLICAÇÃO
                     cin >> Numero1;
                     Acumulador = Acumulador * Numero1;
                 }
@@ -69,7 +69,7 @@ int main() {
                 cout << "Quantos numeros você quer dividir?";
                 cin >> Quantidade;
                 for (i=0;i<Quantidade;i++){
-                    cout << "Qual o " << i+1 << "o numero?";
+                    cout << "Qual o " << i+1 << "o numero?";                      //CÓDIGO DA DIVISÃO
                     cin >> Numero1;
                     Acumulador = Numero1 / Acumulador;
                 }
@@ -79,7 +79,7 @@ int main() {
             case 5:
                 cout << "Numero da base:";
                 cin >> Numero1;
-                cout << "Numero do expoente:";
+                cout << "Numero do expoente:";                                     //CÓDIGO DA EXPONENCIAÇÃO
                 cin >> Numero2;
                 EXP = pow(Numero1, Numero2);
                 cout << "Potenciação: " << EXP << endl;
@@ -88,7 +88,7 @@ int main() {
             case 6:
                 cout << "Numero dentro da raiz: ";
                 cin >> NumeroRaiz;
-                cout << "Numero potencia da raiz: ";
+                cout << "Numero potencia da raiz: ";                                         //CÓDIGO DA RADICIAÇÃO
                 cin >> NumeroEXP;
                 if (NumeroRaiz<0) {
                     cout << "O resultado e um numero imaginario." << endl;
@@ -105,7 +105,7 @@ int main() {
                 if (Numero1<0) {
                     break;
                 } else if (Numero1==0) {
-                    cout << "Fatorial: 1";
+                    cout << "Fatorial: 1";                                         //CÓDIGO DO FATORIAL
                     break;
                 }
                 for (i=0;i<Numero1;i++){
@@ -120,7 +120,7 @@ int main() {
                 cout << "Numero para fazer termial: ";
                 cin >> Numero1;
                 for (i=0;i<Numero1;i++) {
-                    Fat = Fat + (Numero1 + (Numero1 - 1));
+                    Fat = Fat + (Numero1 + (Numero1 - 1));                          //CÓDIGO DO TERMIAL
                     Numero1 -= 2;
                 }
                 cout << "Termial: " << Fat << endl;
@@ -132,7 +132,7 @@ int main() {
                 cin >> Numero0;
 
                  if (Numero0 == 1 || Numero0 == 0 || Numero0 < 0) {
-                    cout << "Digite um numero valido!" << endl;
+                    cout << "Digite um numero valido!" << endl;                            //CÓDIGO DO PRIMORIAL
                     break;
                 } else {
                     for (i = 0; i < 15; i++) {
@@ -150,17 +150,17 @@ int main() {
             case 10:
                 cout << "Angulo desejado: ";
                 cin >> Numero0;
-                cout << "Seno de " << Numero0 << "e " << sin(Numero0) << endl;
+                cout << "Seno de " << Numero0 << "e " << sin(Numero0) << endl;                 //CÓDIGO DO SENO
                 break;
 
             case 11:
                 cout << "Angulo desejado: ";
                 cin >> Numero0;
-                cout << "Cosseno de " << Numero0 << "e " << cos(Numero0) << endl;
+                cout << "Cosseno de " << Numero0 << "e " << cos(Numero0) << endl;              //CÓDIGO DO COSSENO
                 break;
             
             default:
-                cout << "Insira um numero valido.";
+                cout << "Insira um numero valido.";                                            //COMANDO DEFAULT
                 break;
             }
     } while (OP!=12);
