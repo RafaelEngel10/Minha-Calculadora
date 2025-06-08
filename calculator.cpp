@@ -168,3 +168,5 @@ int main() {
     
     return 0;
 }
+
+//DISCLAMER: O código foi feito sem auxílio de qualquer inteligência artificial.
