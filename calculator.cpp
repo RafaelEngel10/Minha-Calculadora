@@ -77,21 +77,25 @@ int main() {
                 break;
                 
             case 5:
-                cout << "Número da base:";
+                cout << "Numero da base:";
                 cin >> Numero1;
-                cout << "Número do expoente:";
+                cout << "Numero do expoente:";
                 cin >> Numero2;
-                EXP = pow(Numero1, NumeroEXP);
-                cout << EXP << endl;
+                EXP = pow(Numero1, Numero2);
+                cout << "Potenciação: " << EXP << endl;
                 break;
                 
             case 6:
                 cout << "Numero dentro da raiz: ";
                 cin >> NumeroRaiz;
-                cout << "Numero potência da raiz: ";
+                cout << "Numero potencia da raiz: ";
                 cin >> NumeroEXP;
+                if (NumeroRaiz<0) {
+                    cout << "O resultado e um numero imaginario." << endl;
+                    break;
+                }
                 ValorRaiz = pow(NumeroRaiz, 1.0 / NumeroEXP);
-                cout << ValorRaiz << endl;
+                cout << "Valor da raiz: " << ValorRaiz << endl;
                 break;
                 
             case 7:
