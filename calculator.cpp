@@ -23,18 +23,18 @@ int main() {
         cout << "7. Fatorial" << endl;
         cout << "8. Termial" << endl;
         cout << "9. Primorial" << endl;
-        cout << "10. Seno de um Ângulo" << endl;
-        cout << "11. Cosseno de um Ângulo" << endl;
+        cout << "10. Seno de um Angulo" << endl;
+        cout << "11. Cosseno de um Angulo" << endl;
         cout << "12. Sair" << endl;
         cout << "======================================" << endl;
-        cout << "Sua Opção:";
+        cout << "Sua Opcao:";
         cin >> OP;
         switch (OP) {
             case 1:
-                cout << "Quantos números você quer somar?";
+                cout << "Quantos numeros você quer somar?";
                 cin >> Quantidade;
                 for (i=0;i<Quantidade;i++){
-                    cout << "Qual o " << i+1 << "o número?";
+                    cout << "Qual o " << i+1 << "o numero?";
                     cin >> Numero1;
                     Acumulador = Acumulador + Numero1;
                 }
@@ -42,38 +42,38 @@ int main() {
                 break;
                 
             case 2:
-                cout << "Quantos números você quer subtrair?";
+                cout << "Quantos numeros você quer subtrair?";
                 cin >> Quantidade;
                 for (i=0;i<Quantidade;i++){
-                    cout << "Qual o " << i+1 << "o número?";
+                    cout << "Qual o " << i+1 << "o numero?";
                     cin >> Numero1;
                     Acumulador = Numero1 - Acumulador;
                 }
-                cout << "Subtração:" << Acumulador << endl;
+                cout << "Subtracao:" << Acumulador << endl;
                 break;
                 
             case 3:
                 Acumulador = 1;
-                cout << "Quantos números você quer multiplicar?";
+                cout << "Quantos numeros você quer multiplicar?";
                 cin >> Quantidade;
                 for (i=0;i<Quantidade;i++){
-                    cout << "Qual o " << i+1 << "o número?";
+                    cout << "Qual o " << i+1 << "o numero?";
                     cin >> Numero1;
                     Acumulador = Acumulador * Numero1;
                 }
-                cout << "Multiplicação:" << Acumulador << endl;
+                cout << "Multiplicacao:" << Acumulador << endl;
                 break;
                 
             case 4: 
                 Acumulador = 1;
-                cout << "Quantos números você quer dividir?";
+                cout << "Quantos numeros você quer dividir?";
                 cin >> Quantidade;
                 for (i=0;i<Quantidade;i++){
-                    cout << "Qual o " << i+1 << "o número?";
+                    cout << "Qual o " << i+1 << "o numero?";
                     cin >> Numero1;
                     Acumulador = Numero1 / Acumulador;
                 }
-                cout << "Divisão:" << Acumulador << endl;
+                cout << "Divisao:" << Acumulador << endl;
                 break;
                 
             case 5:
@@ -86,9 +86,9 @@ int main() {
                 break;
                 
             case 6:
-                cout << "Número dentro da raiz: ";
+                cout << "Numero dentro da raiz: ";
                 cin >> NumeroRaiz;
-                cout << "Número potência da raiz: ";
+                cout << "Numero potência da raiz: ";
                 cin >> NumeroEXP;
                 ValorRaiz = pow(NumeroRaiz, 1.0 / NumeroEXP);
                 cout << ValorRaiz << endl;
@@ -96,7 +96,7 @@ int main() {
                 
             case 7:
                 Fat = 1;
-                cout << "Número fatorial: ";
+                cout << "Numero fatorial: ";
                 cin >> Numero1;
                 if (Numero1<0) {
                     break;
@@ -113,7 +113,7 @@ int main() {
                 
             case 8:
                 Fat = 0;
-                cout << "Número para fazer termial: ";
+                cout << "Numero para fazer termial: ";
                 cin >> Numero1;
                 for (i=0;i<Numero1;i++) {
                     Fat = Fat + (Numero1 + (Numero1 - 1));
@@ -124,11 +124,11 @@ int main() {
             
             case 9:
                 Fat = 1; // Inicializar com 1
-                cout << "Número para fazer o primorial: ";
+                cout << "Numero para fazer o primorial: ";
                 cin >> Numero0;
 
                  if (Numero0 == 1 || Numero0 == 0 || Numero0 < 0) {
-                    cout << "Digite um número válido!" << endl;
+                    cout << "Digite um numero valido!" << endl;
                     break;
                 } else {
                     for (i = 0; i < 15; i++) {
@@ -141,21 +141,22 @@ int main() {
                         }
                     }
                 }
+                break;
 
             case 10:
-                cout << "Ângulo desejado: ";
+                cout << "Angulo desejado: ";
                 cin >> Numero0;
-                cout << "Seno de " << Numero0 << "é " << sin(Numero0) << endl;
+                cout << "Seno de " << Numero0 << "e " << sin(Numero0) << endl;
                 break;
 
             case 11:
-                cout << "Ângulo desejado: ";
+                cout << "Angulo desejado: ";
                 cin >> Numero0;
-                cout << "Cosseno de " << Numero0 << "é " << cos(Numero0) << endl;
+                cout << "Cosseno de " << Numero0 << "e " << cos(Numero0) << endl;
                 break;
             
             default:
-                cout << "Insira um número válido.";
+                cout << "Insira um numero valido.";
                 break;
             }
     } while (OP!=12);
