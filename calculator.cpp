@@ -13,7 +13,7 @@ int main() {
     Acumulador = 0;    //inicializando variáveis de forma padrão, sujeitas a mudanças.
     
     do {
-        cout << "=============Calculadora==============" << endl;
+        cout << "============= Calculadora ==============" << endl;
         cout << "1. Somar" << endl;
         cout << "2. Subtrair" << endl;
         cout << "3. Multiplicar" << endl;                                         //Menu de escolha -> Usuário escolhe qual operação quer fazer entrando com digitos de 1 a 11
@@ -27,7 +27,7 @@ int main() {
         cout << "11. Cosseno de um Angulo" << endl;
         cout << "12. Tangente de um Angulo" << endl;
         cout << "13. Sair" << endl;
-        cout << "======================================" << endl;
+        cout << "========================================" << endl;
         cout << "Sua Opcao:";
         cin >> OP;
         switch (OP) {
