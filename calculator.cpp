@@ -2,15 +2,31 @@
 #include <cmath>
 using namespace std;
 
+double sin_graus(double graus) {
+    return sin(graus * (M_PI / 180.0));
+}
+
+double cos_graus(double graus) {
+    return cos(graus * (M_PI/180.0));
+}
+
+double tan_graus (double graus) {
+    return tan(graus * (M_PI/180.0));
+}
+
 int main() {
     
-    int OP,i,j,Quantidade,NumeroEXP,Fat,Numero0;     //Fat = Fatorial | Numero0 como inteiro para propositos que Numero1 não consegue (%) | NumeroEXP denomina se a raiz vai ser quadrada, cubica, etc.
+    int OP,i,j,Quantidade,NumeroEXP,Fat,Numero0,Angulo;     //Fat = Fatorial | Numero0 como inteiro para propositos que Numero1 não consegue (%) | NumeroEXP denomina se a raiz vai ser quadrada, cubica, etc.
     float Numero1,Numero2,Acumulador,EXP,ValorRaiz;      //Seus nomes são autoexplicativos
     double NumeroRaiz; //variável tipo double para guardar o valor do número dentro da raiz
+    const double PI = 3.14159265358979323846;       //constante matemática PI com diversas casas decimais
+    char Resposta[15], Resposta2[15];            //vetor tipo char para armazenar a resposta.
     int Primos[15] = {
         2, 3, 5, 7, 11, 13, 17, 19, 23, 29,
         31, 37, 41, 43, 47 };      //Vetor de números primos para o primorial
     Acumulador = 0;    //inicializando variáveis de forma padrão, sujeitas a mudanças.
+    double rad; //Formula do radiano = Angulo * PI/180;                
+
     
     do {
         cout << "============= Calculadora ==============" << endl;
@@ -149,20 +165,81 @@ int main() {
                 break;
 
             case 10:
-                cout << "Angulo desejado: ";
-                cin >> Numero0;
-                cout << "Seno de " << Numero0 << "e " << sin(Numero0) << endl;                 //CÓDIGO DO SENO
+                cout << "Resposta usando Angulo ou Radiano? ";
+                cin >> Resposta;                
+                if (Resposta[0]=='A' || Resposta[0]=='a')   {                                               //CÓDIGO DO SENO
+                    cout << "Valor do Angulo: ";
+                    cin >> Angulo;
+                    cout << "Seno do angulo " << Angulo << ": " << sin_graus(Angulo) << endl;
+                    break;
+                } else if (Resposta[0]=='R' || Resposta[0]=='r') {
+                    cout << "Você quer informar o radiano ou o angulo: ";
+                    cin >> Resposta2;
+                    if (Resposta2[0]=='R' || Resposta2[0]=='r') {
+                        cout << "Informe o valor em radianos: ";
+                        cin >> rad;
+                        cout << "Seno do radiano " << rad << " e de: " << sin(rad) << endl;
+                        break;
+                    } else if (Resposta2[0]=='A' || Resposta2[0]=='a') {
+                        cout << "Informe o angulo para conversão: ";
+                        cin >> Numero0;
+                        rad = Numero0 * PI/180;
+                        cout << "Seno de " << rad << " e: " << sin(rad) << endl;
+                        break;
+                    }
+                }                                          
                 break;
 
             case 11:
-                cout << "Angulo desejado: ";
-                cin >> Numero0;
-                cout << "Cosseno de " << Numero0 << "e " << cos(Numero0) << endl;              //CÓDIGO DO COSSENO
+                cout << "Resposta usando Angulo ou Radiano? ";
+                cin >> Resposta;                
+                if (Resposta[0]=='A' || Resposta[0]=='a')   {                                               //CÓDIGO DO SENO
+                    cout << "Valor do Angulo: ";
+                    cin >> Angulo;
+                    cout << "Cosseno do angulo " << Angulo << ": " << cos_graus(Angulo) << endl;
+                    break;
+                } else if (Resposta[0]=='R' || Resposta[0]=='r') {
+                    cout << "Você quer informar o radiano ou o angulo: ";
+                    cin >> Resposta2;
+                    if (Resposta2[0]=='R' || Resposta2[0]=='r') {
+                        cout << "Informe o valor em radianos: ";
+                        cin >> rad;
+                        cout << "Cosseno do radiano " << rad << " e de: " << cos(rad) << endl;
+                        break;
+                    } else if (Resposta2[0]=='A' || Resposta2[0]=='a') {
+                        cout << "Informe o angulo para conversão: ";
+                        cin >> Numero0;
+                        rad = Numero0 * PI/180;
+                        cout << "Cosseno de " << rad << " e: " << cos(rad) << endl;
+                        break;
+                    }
+                }                                          
                 break;
+
             case 12:
-                cout << "Angulo desejado: ";
-                cin >> Numero0;
-                cout << "Tangente de " << Numero0 << "e " << tan(Numero0) << endl;              //CÓDIGO DO COSSENO
+                cout << "Resposta usando Angulo ou Radiano? ";
+                cin >> Resposta;                
+                if (Resposta[0]=='A' || Resposta[0]=='a')   {                                               //CÓDIGO DO SENO
+                    cout << "Valor do Angulo: ";
+                    cin >> Angulo;
+                    cout << "Tangente do angulo " << Angulo << ": " << tan_graus(Angulo) << endl;
+                    break;
+                } else if (Resposta[0]=='R' || Resposta[0]=='r') {
+                    cout << "Você quer informar o radiano ou o angulo: ";
+                    cin >> Resposta2;
+                    if (Resposta2[0]=='R' || Resposta2[0]=='r') {
+                        cout << "Informe o valor em radianos: ";
+                        cin >> rad;
+                        cout << "Tangente do radiano " << rad << " e de: " << tan(rad) << endl;
+                        break;
+                    } else if (Resposta2[0]=='A' || Resposta2[0]=='a') {
+                        cout << "Informe o angulo para conversão: ";
+                        cin >> Numero0;
+                        rad = Numero0 * PI/180;
+                        cout << "Tangente de " << rad << " e: " << tan(rad) << endl;
+                        break;
+                    }
+                }                                          
                 break;
             
             default:
@@ -176,4 +253,4 @@ int main() {
     } while (OP!=13);
 }
 
-//DISCLAMER: O código foi feito sem auxílio de qualquer inteligência artificial.
+//DISCLAMER: O código foi feito com intenções de estudo e aprendizagem.
