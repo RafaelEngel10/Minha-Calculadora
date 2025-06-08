@@ -3,15 +3,15 @@
 using namespace std;
 
 double sin_graus(double graus) {
-    return sin(graus * (M_PI / 180.0));
+    return sin(graus * (M_PI / 180.0));                                  //Função para seno usando graus, ao invés de radianos
 }
 
 double cos_graus(double graus) {
-    return cos(graus * (M_PI/180.0));
+    return cos(graus * (M_PI/180.0));                                    //Função para cosseno usando graus, ao invés de radianos
 }
 
 double tan_graus (double graus) {
-    return tan(graus * (M_PI/180.0));
+    return tan(graus * (M_PI/180.0));                                    //Função para tangente usando graus, ao invés de radianos
 }
 
 double log_base(double x, double base) {
@@ -288,7 +288,7 @@ int main() {
                     cout << "O valor e 1" << endl;
                     break;
                 } else if (EXP==1) {
-                    cout << "O valor e o proprio numero de euler: " << e << endl;
+                    cout << "O valor e o proprio numero de euler: " << e << endl;                              //CÓDIGO DA POTÊNCIAÇÃO NATURAL
                     break;
                 }
                 do {
