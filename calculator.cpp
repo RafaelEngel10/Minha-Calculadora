@@ -25,7 +25,8 @@ int main() {
         cout << "9. Primorial" << endl;
         cout << "10. Seno de um Angulo" << endl;
         cout << "11. Cosseno de um Angulo" << endl;
-        cout << "12. Sair" << endl;
+        cout << "12. Tangente de um Angulo" << endl;
+        cout << "13. Sair" << endl;
         cout << "======================================" << endl;
         cout << "Sua Opcao:";
         cin >> OP;
@@ -158,15 +159,21 @@ int main() {
                 cin >> Numero0;
                 cout << "Cosseno de " << Numero0 << "e " << cos(Numero0) << endl;              //CÓDIGO DO COSSENO
                 break;
+            case 12:
+                cout << "Angulo desejado: ";
+                cin >> Numero0;
+                cout << "Tangente de " << Numero0 << "e " << tan(Numero0) << endl;              //CÓDIGO DO COSSENO
+                break;
             
             default:
+                if (OP==13) {
+                    cout << "Saindo do programa..." << endl;
+                    return 0;
+                }
                 cout << "Insira um numero valido.";                                            //COMANDO DEFAULT
                 break;
-            }
-    } while (OP!=12);
-    
-    
-    return 0;
+        }
+    } while (OP!=13);
 }
 
 //DISCLAMER: O código foi feito sem auxílio de qualquer inteligência artificial.
