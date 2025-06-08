@@ -23,7 +23,7 @@ int main() {
     int OP,i,j,Quantidade,NumeroEXP,Fat,Numero0,Angulo;     //Fat = Fatorial | Numero0 como inteiro para propositos que Numero1 não consegue (%) | NumeroEXP denomina se a raiz vai ser quadrada, cubica, etc.
     float Numero1,Numero2,Acumulador,EXP,ValorRaiz;      //Seus nomes são autoexplicativos
     double NumeroRaiz; //variável tipo double para guardar o valor do número dentro da raiz
-    const double PI = 3.14159265358979323846;       //constante matemática PI com diversas casas decimais
+    const double PI = 3.14159265358979323846, e = 2.718281828459045235360287471352662497757;       //constante matemática PI com diversas casas decimais | número de euler 
     char Resposta[15], Resposta2[15];            //vetor tipo char para armazenar a resposta.
     int Primos[15] = {
         2, 3, 5, 7, 11, 13, 17, 19, 23, 29,
@@ -39,16 +39,18 @@ int main() {
         cout << "3. Multiplicar" << endl;                                         //Menu de escolha -> Usuário escolhe qual operação quer fazer entrando com digitos de 1 a 11
         cout << "4. Dividir" << endl;                                             //Opção 12 faz com que a calculadora "desligue"
         cout << "5. Exponenciar" << endl;
-        cout << "6. Radiciar (Tirar a raiz quadrada)" << endl;
-        cout << "7. Fatorial" << endl;
-        cout << "8. Termial" << endl;
-        cout << "9. Primorial" << endl;
-        cout << "10. Seno de um Angulo" << endl;
-        cout << "11. Cosseno de um Angulo" << endl;
-        cout << "12. Tangente de um Angulo" << endl;
-        cout << "13. Logaritmo" << endl;
-        cout << "14. Logaritmo Natural" << endl;
-        cout << "15. Sair" << endl;
+        cout << "6. Radiciacao Simples" << endl;
+        cout << "7. Porcentagem" << endl;
+        cout << "8. Fatorial" << endl;
+        cout << "9. Termial" << endl;
+        cout << "10. Primorial" << endl;
+        cout << "11. Seno de um Angulo" << endl;
+        cout << "12. Cosseno de um Angulo" << endl;
+        cout << "13. Tangente de um Angulo" << endl;
+        cout << "14. Logaritmo" << endl;
+        cout << "15. Logaritmo Natural" << endl;
+        cout << "16. Potenciação com Numero de Euler" << endl;
+        cout << "17. Sair" << endl;
         cout << "========================================" << endl;
         cout << "Sua Opcao:";
         cin >> OP;
@@ -120,8 +122,17 @@ int main() {
                 ValorRaiz = pow(NumeroRaiz, 1.0 / NumeroEXP);
                 cout << "Valor da raiz: " << ValorRaiz << endl;
                 break;
-                
+
             case 7:
+                cout << "Numero: ";
+                cin >> Numero1;
+                cout << "Porcentagem: ";
+                cin >> Numero0;
+                Acumulador = Numero1 * Numero0/100;
+                cout << Numero0 << " porcento de " << Numero1 << ": " << Acumulador << endl;               //CÓDIGO DA PORCENTAGEM
+                break;
+                
+            case 8:
                 Fat = 1;
                 cout << "Numero fatorial: ";
                 cin >> Numero1;
@@ -138,7 +149,7 @@ int main() {
                 cout << "Fatorial: " << Fat << endl;
                 break;
                 
-            case 8:
+            case 9:
                 Fat = 0;
                 cout << "Numero para fazer termial: ";
                 cin >> Numero1;
@@ -149,7 +160,7 @@ int main() {
                 cout << "Termial: " << Fat << endl;
                 break;
             
-            case 9:
+            case 10:
                 Fat = 1; // Inicializar com 1
                 cout << "Numero para fazer o primorial: ";
                 cin >> Numero0;
@@ -170,7 +181,7 @@ int main() {
                 }
                 break;
 
-            case 10:
+            case 11:
                 cout << "Resposta usando Angulo ou Radiano? ";
                 cin >> Resposta;                
                 if (Resposta[0]=='A' || Resposta[0]=='a')   {                                               //CÓDIGO DO SENO
@@ -196,7 +207,7 @@ int main() {
                 }                                          
                 break;
 
-            case 11:
+            case 12:
                 cout << "Resposta usando Angulo ou Radiano? ";
                 cin >> Resposta;                
                 if (Resposta[0]=='A' || Resposta[0]=='a')   {                                               //CÓDIGO DO SENO
@@ -222,7 +233,7 @@ int main() {
                 }                                          
                 break;
 
-            case 12:
+            case 13:
                 cout << "Resposta usando Angulo ou Radiano? ";
                 cin >> Resposta;                
                 if (Resposta[0]=='A' || Resposta[0]=='a')   {                                               //CÓDIGO DO SENO
@@ -248,37 +259,53 @@ int main() {
                 }                                          
                 break;
 
-            case 13:
+            case 14:
                 cout << "Qual o numero: ";
                 cin >> Numero1;
                 cout << "Qual o numero da base: ";
                 cin >> Numero0;
                 if (Numero1<0 || Numero0==1) {
-                    cout << "Impossivel fazer o logaritmo desse numero." << endl;
+                    cout << "Impossivel fazer o logaritmo desse numero." << endl;                           //CÓDIGO DO LOG
                     break;
                 } 
                 cout << "Logaritmo do numero: " << log_base(Numero1, Numero0) << endl;
                 break;
             
-            case 14:
+            case 15:
                 cout << "Qual o numero: ";
                 cin >> Numero1;
                 if (Numero1<0) {
-                    cout << "Impossivel fazer o logaritmo natural desse numero." << endl;
+                    cout << "Impossivel fazer o logaritmo natural desse numero." << endl;                    //CÓDIGO DO LOG NATURAL
                     break;
                 }
                 cout << "Logaritmo natural: " << log(Numero1) << endl;
                 break;
             
+            case 16:
+                cout << "Expoente desejado: ";
+                cin >> EXP;
+                if (EXP==0) {
+                    cout << "O valor e 1" << endl;
+                    break;
+                } else if (EXP==1) {
+                    cout << "O valor e o proprio numero de euler: " << e << endl;
+                    break;
+                }
+                do {
+                    Acumulador = Acumulador + (e * (e * 1));
+                } while (i<EXP);
+                cout << "Potenciacao do numero de euler: " << Acumulador << endl;
+                break;
+
             default:
-                if (OP==15) {
+                if (OP==17) {
                     cout << "Saindo do programa..." << endl;
                     return 0;
                 }
                 cout << "Insira um numero valido.";                                            //COMANDO DEFAULT
                 break;
         }
-    } while (OP!=15);
+    } while (OP!=17);
 }
 
 //DISCLAMER: O código foi feito com intenções de estudo e aprendizagem.
