@@ -14,6 +14,10 @@ double tan_graus (double graus) {
     return tan(graus * (M_PI/180.0));
 }
 
+double log_base(double x, double base) {
+    return log(x) / log(base);  // Usa log natural (base e)
+}
+
 int main() {
     
     int OP,i,j,Quantidade,NumeroEXP,Fat,Numero0,Angulo;     //Fat = Fatorial | Numero0 como inteiro para propositos que Numero1 não consegue (%) | NumeroEXP denomina se a raiz vai ser quadrada, cubica, etc.
@@ -42,7 +46,9 @@ int main() {
         cout << "10. Seno de um Angulo" << endl;
         cout << "11. Cosseno de um Angulo" << endl;
         cout << "12. Tangente de um Angulo" << endl;
-        cout << "13. Sair" << endl;
+        cout << "13. Logaritmo" << endl;
+        cout << "14. Logaritmo Natural" << endl;
+        cout << "15. Sair" << endl;
         cout << "========================================" << endl;
         cout << "Sua Opcao:";
         cin >> OP;
@@ -241,16 +247,38 @@ int main() {
                     }
                 }                                          
                 break;
+
+            case 13:
+                cout << "Qual o numero: ";
+                cin >> Numero1;
+                cout << "Qual o numero da base: ";
+                cin >> Numero0;
+                if (Numero1<0 || Numero0==1) {
+                    cout << "Impossivel fazer o logaritmo desse numero." << endl;
+                    break;
+                } 
+                cout << "Logaritmo do numero: " << log_base(Numero1, Numero0) << endl;
+                break;
+            
+            case 14:
+                cout << "Qual o numero: ";
+                cin >> Numero1;
+                if (Numero1<0) {
+                    cout << "Impossivel fazer o logaritmo natural desse numero." << endl;
+                    break;
+                }
+                cout << "Logaritmo natural: " << log(Numero1) << endl;
+                break;
             
             default:
-                if (OP==13) {
+                if (OP==15) {
                     cout << "Saindo do programa..." << endl;
                     return 0;
                 }
                 cout << "Insira um numero valido.";                                            //COMANDO DEFAULT
                 break;
         }
-    } while (OP!=13);
+    } while (OP!=15);
 }
 
 //DISCLAMER: O código foi feito com intenções de estudo e aprendizagem.
