@@ -15,8 +15,8 @@ double tan_graus (double graus) {
 }
 
 double log_base(double x, double base) {
-    return log(x) / log(base);  // Usa log natural (base e)
-}
+    return log(x) / log(base);                                           //Como o log() da biblioteca <cmath> usa o número de euler como base, fiz essa função que permite a
+}                                                                        // escolha da base pelo usuário 
 
 int main() {
     
