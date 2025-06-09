@@ -49,7 +49,7 @@ int main() {
         cout << "13. Tangente de um Angulo" << endl;
         cout << "14. Logaritmo" << endl;
         cout << "15. Logaritmo Natural" << endl;
-        cout << "16. Potenciação com Numero de Euler" << endl;
+        cout << "16. Potenciacao com Numero de Euler" << endl;
         cout << "17. Sair" << endl;
         cout << "========================================" << endl;
         cout << "Sua Opcao:";
