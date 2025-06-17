@@ -56,7 +56,7 @@ int main() {
         cin >> OP;
         switch (OP) {
             case 1:
-                cout << "Quantos numeros você quer somar?";
+                cout << "Quantos numeros voce quer somar?";
                 cin >> Quantidade;
                 for (i=0;i<Quantidade;i++){
                     cout << "Qual o " << i+1 << "o numero?";                      //CÓDIGO DA SOMA
@@ -67,7 +67,7 @@ int main() {
                 break;
                 
             case 2:
-                cout << "Quantos numeros você quer subtrair?";
+                cout << "Quantos numeros voce quer subtrair?";
                 cin >> Quantidade;
                 for (i=0;i<Quantidade;i++){
                     cout << "Qual o " << i+1 << "o numero?";                      //CÓDIGO DA SUBTRAÇÃO
@@ -79,7 +79,7 @@ int main() {
                 
             case 3:
                 Acumulador = 1;
-                cout << "Quantos numeros você quer multiplicar?";
+                cout << "Quantos numeros voce quer multiplicar?";
                 cin >> Quantidade;
                 for (i=0;i<Quantidade;i++){
                     cout << "Qual o " << i+1 << "o numero?";                       //CÓDIGO DA MULTIPLICAÇÃO
@@ -91,7 +91,7 @@ int main() {
                 
             case 4: 
                 Acumulador = 1;
-                cout << "Quantos numeros você quer dividir?";
+                cout << "Quantos numeros voce quer dividir?";
                 cin >> Quantidade;
                 for (i=0;i<Quantidade;i++){
                     cout << "Qual o " << i+1 << "o numero?";                      //CÓDIGO DA DIVISÃO
